@@ -39,24 +39,33 @@ class Cola {
         this.length--;
     }
 
-    delete(val){
-        let posicion = this.first
-        let borrador = null;
-        for(let i = 0; i < this.length; i++){
-            if (posicion.next !== null && typeof posicion.next === 'object') {
-                if(val != posicion.val){
-                    if(borrador === null){
-                        borrador = new nodo(posicion.val)
-                        console.log(borrador)
+    delete(val) {
+        let current = this.first;
+        let previous = null;
+    
+        while (current !== null) {
+            if (current.val === val) {
+                if (previous === null) {
+                    this.first = current.next;
+    
+                    if (current === this.last) {
+                        this.last = null;
                     }
-                    borrador.next = posicion
-                }else{
-                    posicion = posicion.next
+                } else {
+                    previous.next = current.next;
+    
+                    if (current === this.last) {
+                        this.last = previous;
+                    }
                 }
+                this.length--;
+                return;
             }
+            
+            previous = current;
+            current = current.next;
         }
-        this.first = borrador
-    }
+    }    
 
     isEmpty(){
         return this.length === 0 ? true : false;
@@ -95,4 +104,5 @@ cola.insertHead(5)
 cola.insertEnd(9)
 cola.deleteHead()
 console.log(cola.search(10))
-cola.delete(1)
+cola.delete(9)
+console.log(cola)
