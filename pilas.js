@@ -29,14 +29,3 @@ class nodo {
         this.punteroAnt = puntero;
     }
 }
-
-
-const pila = new Pila();
-
-console.log(pila.isEmpty())
-pila.push(1);
-pila.push(2);
-pila.push(3);
-console.log(pila.pop())
-console.log(pila.top())
-console.log(pila.nodo)
