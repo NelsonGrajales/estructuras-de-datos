@@ -43,15 +43,3 @@ class nodo {
         this.next = null;
     }
 }
-
-
-const cola = new Cola();
-
-console.log(cola.isEmpty())
-cola.enqueue(1)
-cola.enqueue(2)
-cola.enqueue(3)
-cola.dequeue()
-console.log(cola.top())
-
-console.log(cola)
