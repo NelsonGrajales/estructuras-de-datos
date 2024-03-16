@@ -92,17 +92,3 @@ class nodo {
         this.next = null;
     }
 }
-
-
-const cola = new Cola();
-
-
-cola.insertEnd(1)
-cola.insertEnd(2)
-cola.insertEnd(3)
-cola.insertHead(5)
-cola.insertEnd(9)
-cola.deleteHead()
-console.log(cola.search(10))
-cola.delete(9)
-console.log(cola)
